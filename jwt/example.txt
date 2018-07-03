@@ -1,0 +1,15 @@
+auth = ""
+""
+fetch('http://localhost:8080/login', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': '*/*',
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+
+                     	"username": "admin", "password": "password"
+
+                    })
+                }).then(function(resp) {
+  resp.headers.forEach(function(val, key) { if (key == 'authorization') auth = val })})   
